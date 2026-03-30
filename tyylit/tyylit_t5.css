@@ -16,3 +16,23 @@ th, td {
     border: 1px solid black;
     padding: 10px;
 }
+
+/* unvisited link */
+a:link {
+  color: yellow;
+}
+
+/* visited link */
+a:visited {
+  color: yellowgreen;
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(0, 225, 255);
+}
+
+/* selected link */
+a:active {
+  color: rgb(0, 255, 136);
+}
