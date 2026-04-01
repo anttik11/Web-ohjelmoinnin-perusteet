@@ -17,9 +17,14 @@ p {
     color: white;
 }
 
+ol, ul {
+    color: white;
+}
+
 th, td {
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 10px;
+    color: white;
 }
 
 /* unvisited link */
