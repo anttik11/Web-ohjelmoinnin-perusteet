@@ -17,11 +17,11 @@ p {
     color: white;
 }
 
-ol, ul, li{
+ol, ul, li {
     color: white;
 }
 
-th, td {
+th, td, table {
     border: 1px solid white;
     padding: 10px;
     color: white;
