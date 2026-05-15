@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – HTML-esittely</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/html-esittely.css" />
+</head>
+<body onload="alustaTema()">
+  <nav class="navbar">
+    <div class="nav-brand">Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Etusivu</a></li>
+      <li><a href="html-esittely.html" class="active">HTML</a></li>
+      <li><a href="css-esittely.html">CSS</a></li>
+      <li><a href="js-esittely.html">JavaScript</a></li>
+    </ul>
+    <button class="dark-mode-btn" onclick="vaihdaTema()" id="tema-nappi">
+      <span class="btn-icon">🌙</span> Dark mode
+    </button>
+  </nav>
+
+  <main>
+    <h1>HTML-<span class="accent">esittely</span></h1>
+    <p class="page-intro">Tällä sivulla esitellään perus-HTML-elementtejä esimerkkien avulla.</p>
+
+    <section class="demo-section">
+      <h2>Otsikkotasot</h2>
+      <div class="demo-box">
+        <h1>Otsikko h1</h1>
+        <h2>Otsikko h2</h2>
+        <h3>Otsikko h3</h3>
+        <h4>Otsikko h4</h4>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Tekstielementit</h2>
+      <div class="demo-box">
+        <p>Tämä on tavallinen kappale (<code>&lt;p&gt;</code>).</p>
+        <p>Tekstissä voi olla <strong>lihavoitua</strong>, <em>kursivoitua</em> tai <u>alleviivattua</u> tekstiä.</p>
+        <p>Voit myös käyttää <mark>korostusta</mark> tai <small>pienempää tekstiä</small>.</p>
+        <blockquote>"Blockquote-elementtiä käytetään lainauksiin."</blockquote>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Listat</h2>
+      <div class="demo-box lists-grid">
+        <div>
+          <h3>Järjestämätön lista</h3>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Järjestetty lista</h3>
+          <ol>
+            <li>Suunnittele</li>
+            <li>Koodaa</li>
+            <li>Testaa</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Linkit</h2>
+      <div class="demo-box">
+        <p><a href="https://www.w3schools.com/html/" target="_blank" rel="noopener">W3Schools HTML-tutoriaali ↗</a></p>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Taulukko</h2>
+      <div class="demo-box">
+        <table>
+          <thead>
+            <tr><th>Teknologia</th><th>Tarkoitus</th><th>Tiedostopääte</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>HTML</td><td>Rakenne</td><td>.html</td></tr>
+            <tr><td>CSS</td><td>Ulkoasu</td><td>.css</td></tr>
+            <tr><td>JavaScript</td><td>Toiminnallisuus</td><td>.js</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Kuva</h2>
+      <div class="demo-box">
+        <figure>
+          <img src="https://picsum.photos/seed/html/800/300" alt="Esimerkki kuva" class="demo-img" />
+          <figcaption>Kuva: Esimerkki img-elementistä figure- ja figcaption-elementtien sisällä.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Lomake-elementit</h2>
+      <div class="demo-box">
+        <div class="form-demo">
+          <label for="nimi">Nimi:</label>
+          <input type="text" id="nimi" placeholder="Kirjoita nimesi" />
+          <label for="viesti">Viesti:</label>
+          <textarea id="viesti" rows="3" placeholder="Kirjoita viesti..."></textarea>
+          <label for="valinta">Valinta:</label>
+          <select id="valinta">
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>JavaScript</option>
+          </select>
+          <button type="button">Lähetä</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/tema.js"></script>
+</body>
+</html>

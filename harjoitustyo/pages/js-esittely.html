@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – JavaScript-esittely</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/js-esittely.css" />
+</head>
+<body onload="alustaTema()">
+  <nav class="navbar">
+    <div class="nav-brand">Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Etusivu</a></li>
+      <li><a href="html-esittely.html">HTML</a></li>
+      <li><a href="css-esittely.html">CSS</a></li>
+      <li><a href="js-esittely.html" class="active">JavaScript</a></li>
+    </ul>
+    <button class="dark-mode-btn" onclick="vaihdaTema()" id="tema-nappi">
+      <span class="btn-icon">🌙</span> Dark mode
+    </button>
+  </nav>
+
+  <main>
+    <h1>JavaScript-<span class="accent">esittely</span></h1>
+    <p class="page-intro">
+      Dark/light mode -vaihtaja, joka tallentaa teemavalinnan selaimen local storageen.
+    </p>
+
+    <section class="tema-demo">
+      <div class="tema-kortti">
+        <div class="tema-ikoni" id="tema-ikoni">🌙</div>
+        <h2 id="tema-otsikko">Dark mode</h2>
+        <p id="tema-kuvaus">
+          Klikkaa nappia vaihtaaksesi sivuston tumman ja vaalean teeman välillä.
+          Valintasi tallentuu local storageen ja muistetaan, kun palaat sivulle.
+        </p>
+        <button class="iso-nappi" onclick="vaihdaTema()">
+          <span id="iso-nappi-teksti">Vaihda Dark modeen</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="koodi-selitys">
+      <h2>Miten se toimii?</h2>
+      <div class="askel-lista">
+        <div class="askel">
+          <span class="askel-nro">1</span>
+          <div>
+            <h3>alustaTema()</h3>
+            <p>Kutsutaan sivun latautuessa (<code>onload</code>). Hakee local storagesta tallennetun teemavalinnan ja asettaa sen sivulle sekä päivittää napin tekstin.</p>
+          </div>
+        </div>
+        <div class="askel">
+          <span class="askel-nro">2</span>
+          <div>
+            <h3>vaihdaTema()</h3>
+            <p>Kutsutaan kun nappia painetaan. Lisää tai poistaa <code>dark-mode</code>-luokan <code>body</code>-elementistä, tallentaa valinnan local storageen ja päivittää napin ulkoasun.</p>
+          </div>
+        </div>
+        <div class="askel">
+          <span class="askel-nro">3</span>
+          <div>
+            <h3>paivitaNappi(onDark)</h3>
+            <p>Apufunktio, joka päivittää napin tekstin ja ikonin vastaamaan nykyistä teemaa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="storage-nakyma">
+      <h2>Local storage -tila</h2>
+      <div class="storage-ruutu">
+        <span class="storage-avain">"teema"</span>
+        <span class="storage-nuoli">→</span>
+        <span class="storage-arvo" id="storage-arvo">"light"</span>
+      </div>
+      <p class="storage-selite">Arvo päivittyy reaaliajassa kun vaihdat teemaa.</p>
+    </section>
+  </main>
+
+  <script src="js/tema.js"></script>
+  <script>
+    function paivitaJsSivu() {
+      var onDark    = document.body.classList.contains('dark-mode');
+      var isoTeksti = document.getElementById('iso-nappi-teksti');
+      var ikoni     = document.getElementById('tema-ikoni');
+      var otsikko   = document.getElementById('tema-otsikko');
+      var kuvaus    = document.getElementById('tema-kuvaus');
+      var storageEl = document.getElementById('storage-arvo');
+
+      if (isoTeksti) isoTeksti.textContent = onDark ? 'Vaihda Light modeen' : 'Vaihda Dark modeen';
+      if (ikoni)     ikoni.textContent     = onDark ? '☀️' : '🌙';
+      if (otsikko)   otsikko.textContent   = onDark ? 'Light mode' : 'Dark mode';
+      if (kuvaus)    kuvaus.textContent    = onDark
+        ? 'Sivu on nyt tummassa teemassa. Klikkaa nappia vaihtaaksesi takaisin vaaleaan.'
+        : 'Sivu on nyt vaaleassa teemassa. Klikkaa nappia vaihtaaksesi tummaan.';
+      if (storageEl) storageEl.textContent = '"' + (localStorage.getItem('teema') || 'light') + '"';
+    }
+
+    var alkupVaihda = vaihdaTema;
+    vaihdaTema = function () { alkupVaihda(); paivitaJsSivu(); };
+
+    document.addEventListener('DOMContentLoaded', paivitaJsSivu);
+  </script>
+</body>
+</html>

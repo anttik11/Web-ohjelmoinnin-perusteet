@@ -1,0 +1,71 @@
+/* css-esittely.css */
+
+.layout-top {
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  padding: 3rem 2rem 2.5rem;
+  width: 100%;
+}
+
+.layout-top h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem; }
+.layout-top p { max-width: 720px; line-height: 1.75; opacity: 0.78; font-weight: 300; }
+
+.layout-middle {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  min-height: 340px;
+}
+
+.column {
+  flex: 1;
+  padding: 2rem 1.75rem;
+  border-right: 1.5px solid var(--border);
+  background: var(--surface);
+}
+.column:last-child { border-right: none; }
+
+.column--highlight {
+  background: var(--accent-lt);
+  border-top: 3px solid var(--accent);
+}
+
+.column h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1.5px solid var(--border);
+}
+
+.column p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 0.65rem; }
+
+.color-swatch-row { display: flex; gap: 0.5rem; margin-top: 1.25rem; }
+.swatch { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--border); }
+
+.feature-list { list-style: none; margin-top: 1.25rem; }
+.feature-list li {
+  font-size: 0.88rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.feature-list li::before { content: "▸"; color: var(--accent); }
+
+.progress-demo { margin-top: 1.25rem; }
+.progress-demo label { font-size: 0.82rem; font-weight: 500; display: block; margin-bottom: 0.4rem; }
+.progress-bar { background: var(--border); border-radius: 99px; height: 8px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--accent); border-radius: 99px; }
+
+.layout-bottom {
+  background: var(--accent);
+  color: #fff;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  font-size: 0.9rem;
+  text-align: center;
+  opacity: 0.92;
+}

@@ -1,0 +1,143 @@
+/* ============================================
+   main.css – Yhteinen tyyli kaikille sivuille
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+/* ---- CSS-muuttujat (vaalea teema oletus) ---- */
+:root {
+  --bg:        #f5f3ee;
+  --surface:   #ffffff;
+  --border:    #e0dbd0;
+  --text:      #1a1a18;
+  --text-muted:#6b6860;
+  --accent:    #c8501a;
+  --accent-lt: #f5ede8;
+  --nav-bg:    #1a1a18;
+  --nav-text:  #f5f3ee;
+  --nav-active:#c8501a;
+  --shadow:    0 2px 12px rgba(0,0,0,0.08);
+  --radius:    10px;
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --transition:0.25s ease;
+}
+
+/* ---- Dark mode -muuttujat ---- */
+body.dark-mode {
+  --bg:        #0f0f0e;
+  --surface:   #1c1c1a;
+  --border:    #2e2e2b;
+  --text:      #f0ede6;
+  --text-muted:#8a8780;
+  --accent:    #e8693a;
+  --accent-lt: #2a1a12;
+  --nav-bg:    #0a0a09;
+  --nav-text:  #f0ede6;
+  --shadow:    0 2px 12px rgba(0,0,0,0.4);
+}
+
+/* Sujuva siirtymä kaikille väreille */
+body, .navbar, .card, .demo-box, .bmi-card,
+.layout-top, .layout-middle, .column, .layout-bottom,
+input, textarea, select, table, th, td {
+  transition:
+    background var(--transition),
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ============================================
+   NAVIGAATIOPALKKI
+   ============================================ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--nav-bg);
+  padding: 0 2rem;
+  height: 60px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+}
+
+.nav-brand {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--nav-text);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.4rem 1rem;
+  color: var(--nav-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  opacity: 0.75;
+  transition: opacity var(--transition), background var(--transition), color var(--transition);
+  letter-spacing: 0.02em;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  opacity: 1;
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ---- Dark mode -nappi ---- */
+.dark-mode-btn {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: var(--nav-text);
+  border-radius: 6px;
+  padding: 0.35rem 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: border-color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+.dark-mode-btn:hover { border-color: var(--accent); background: rgba(200,80,26,0.15); }
+.dark-mode-btn .btn-icon { font-size: 1rem; }
+
+/* ============================================
+   YLEISET APULUOKAT
+   ============================================ */
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; }
+
+a { color: var(--accent); }
+
+.accent { color: var(--accent); }
+
+main { padding: 2.5rem 2rem; max-width: 1100px; margin: 0 auto; }

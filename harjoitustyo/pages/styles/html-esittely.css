@@ -1,0 +1,106 @@
+/* html-esittely.css */
+
+.page-intro {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin: 0.75rem 0 2.5rem;
+  font-weight: 300;
+}
+
+main > h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 0.25rem; }
+
+.demo-section { margin-bottom: 2.5rem; }
+
+.demo-section > h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border);
+}
+
+.demo-box {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.demo-box h1 { font-size: 2rem; }
+.demo-box h2 { font-size: 1.5rem; }
+.demo-box h3 { font-size: 1.2rem; }
+.demo-box h4 { font-size: 1rem; }
+.demo-box h1, .demo-box h2, .demo-box h3, .demo-box h4 { margin-bottom: 0.4rem; color: var(--text); }
+
+.demo-box p { margin-bottom: 0.6rem; line-height: 1.7; }
+.demo-box blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.demo-box code {
+  background: var(--accent-lt);
+  color: var(--accent);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.88em;
+  font-family: monospace;
+}
+
+.lists-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.demo-box ul, .demo-box ol { padding-left: 1.5rem; }
+.demo-box li { margin-bottom: 0.3rem; }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+th {
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  padding: 0.65rem 1rem;
+  text-align: left;
+  font-family: var(--font-head);
+}
+td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--accent-lt); }
+
+.demo-img { width: 100%; border-radius: 6px; display: block; }
+figcaption { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+
+.form-demo { display: grid; gap: 0.6rem; }
+.form-demo label { font-weight: 500; font-size: 0.9rem; }
+.form-demo input,
+.form-demo textarea,
+.form-demo select {
+  width: 100%;
+  padding: 0.55rem 0.85rem;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: var(--bg);
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+.form-demo input:focus,
+.form-demo textarea:focus,
+.form-demo select:focus { outline: none; border-color: var(--accent); }
+.form-demo button {
+  justify-self: start;
+  padding: 0.55rem 1.5rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.form-demo button:hover { opacity: 0.85; }

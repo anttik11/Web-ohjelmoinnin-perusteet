@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – CSS-esittely</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/css-esittely.css" />
+</head>
+<body onload="alustaTema()">
+  <nav class="navbar">
+    <div class="nav-brand">Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Etusivu</a></li>
+      <li><a href="html-esittely.html">HTML</a></li>
+      <li><a href="css-esittely.html" class="active">CSS</a></li>
+      <li><a href="js-esittely.html">JavaScript</a></li>
+    </ul>
+    <button class="dark-mode-btn" onclick="vaihdaTema()" id="tema-nappi">
+      <span class="btn-icon">🌙</span> Dark mode
+    </button>
+  </nav>
+
+  <!-- YLÄOSA – koko leveys -->
+  <div class="layout-top">
+    <h1>CSS-<span class="accent">esittely</span></h1>
+    <p>
+      Tämä sivu esittelee CSS:n avulla rakennettua sivuasettelua. Sivu on jaettu
+      kolmeen osaan: yläosa (tämä) on koko sivun levyinen esittelypalkki,
+      keskiosa on jaettu kolmeen yhtä leveään sarakkeeseen, ja alaosa on jälleen
+      koko sivun levyinen alatunniste.
+    </p>
+  </div>
+
+  <!-- KESKIOSA – kolme saraketta -->
+  <div class="layout-middle">
+    <div class="column">
+      <h2>Sarake 1</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula ligula at dui fermentum, ut hendrerit nunc fringilla.</p>
+      <p>Phasellus tincidunt sapien vitae neque malesuada, nec tempus risus varius. Cras euismod libero ut urna bibendum sodales.</p>
+      <div class="color-swatch-row">
+        <span class="swatch" style="background:#c8501a"></span>
+        <span class="swatch" style="background:#1a1a18"></span>
+        <span class="swatch" style="background:#f5f3ee"></span>
+      </div>
+    </div>
+
+    <div class="column column--highlight">
+      <h2>Sarake 2</h2>
+      <p>Donec consequat felis a felis luctus auctor. Nullam commodo risus vel libero condimentum, a facilisis felis fermentum.</p>
+      <p>Sed mollis quam in lacinia sodales. Proin convallis sapien vitae lacinia iaculis.</p>
+      <ul class="feature-list">
+        <li>Flexbox-asettelu</li>
+        <li>CSS-muuttujat</li>
+        <li>Hover-animaatiot</li>
+      </ul>
+    </div>
+
+    <div class="column">
+      <h2>Sarake 3</h2>
+      <p>Integer vehicula risus at diam posuere, sit amet posuere orci ullamcorper. Fusce lacinia quam eget felis lobortis.</p>
+      <p>Nulla facilisi. Etiam aliquam libero at libero efficitur posuere.</p>
+      <div class="progress-demo">
+        <label>Edistyminen</label>
+        <div class="progress-bar"><div class="progress-fill" style="width:72%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALAOSA – koko leveys -->
+  <div class="layout-bottom">
+    <p>Alatunniste – <em>footer</em> – sijaitsee koko sivun levyisenä rakenteen alimmassa osassa.</p>
+  </div>
+
+  <script src="js/tema.js"></script>
+</body>
+</html>

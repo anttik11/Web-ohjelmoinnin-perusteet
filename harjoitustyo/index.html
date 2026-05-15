@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Etusivu</title>
+  <link rel="stylesheet" href="pages/styles/main.css" />
+  <link rel="stylesheet" href="pages/styles/index.css" />
+</head>
+<body onload="alustaTema()">
+  <nav class="navbar">
+    <div class="nav-brand">Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Etusivu</a></li>
+      <li><a href="pages/html-esittely.html">HTML</a></li>
+      <li><a href="pages/css-esittely.html">CSS</a></li>
+      <li><a href="pages/js-esittely.html">JavaScript</a></li>
+    </ul>
+    <button class="dark-mode-btn" onclick="vaihdaTema()" id="tema-nappi">
+      <span class="btn-icon">🌙</span> Dark mode
+    </button>
+  </nav>
+
+  <main class="hero">
+    <div class="hero-content">
+      <h1>Web-ohjelmoinnin<br /><span class="accent">Portfolio</span></h1>
+      <p class="intro">
+        Tähän portfolioon on koottu esimerkkejä web-ohjelmoinnin perusteet
+        -kurssin harjoituksista. Sivusto esittelee kolmea keskeistä
+        web-teknologiaa: HTML:ää, CSS:ää ja JavaScriptiä.
+      </p>
+
+      <div class="cards">
+        <a href="pages/html-esittely.html" class="card">
+          <span class="card-icon">📄</span>
+          <h2>HTML</h2>
+          <p>Perus-HTML-elementtien esittely esimerkkien avulla.</p>
+        </a>
+        <a href="pages/css-esittely.html" class="card">
+          <span class="card-icon">🎨</span>
+          <h2>CSS</h2>
+          <p>CSS-tyylimäärittelyjen mahdollisuuksia käytännössä.</p>
+        </a>
+        <a href="pages/js-esittely.html" class="card">
+          <span class="card-icon">⚙️</span>
+          <h2>JavaScript</h2>
+          <p>Dark/light mode -vaihtaja local storage -tallennuksella.</p>
+        </a>
+      </div>
+
+      <section class="external-links">
+        <h2>Linkkejä</h2>
+        <ul>
+          <li><a href="https://www.w3schools.com/html/" target="_blank" rel="noopener">W3Schools – HTML-tutoriaali ↗</a></li>
+          <li><a href="https://www.w3schools.com/css/"  target="_blank" rel="noopener">W3Schools – CSS-tutoriaali ↗</a></li>
+          <li><a href="https://www.w3schools.com/js/"   target="_blank" rel="noopener">W3Schools – JavaScript-tutoriaali ↗</a></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <script src="pages/js/tema.js"></script>
+</body>
+</html>
